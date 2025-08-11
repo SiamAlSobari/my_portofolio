@@ -1,8 +1,12 @@
+import swagger from "@elysiajs/swagger";
 import type { RequestHandler } from "@sveltejs/kit";
 import { Elysia, t } from "elysia";
 
 // Buat instance Elysia dengan prefix '/api'
 const app = new Elysia({ prefix: "/api" })
+  .use(swagger({
+    path: "/docs",
+  }))
   .get("/", () => {
     return { message: "Hello from GET /api/p" };
   })
