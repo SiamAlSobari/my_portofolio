@@ -3,7 +3,7 @@ import type { RequestHandler } from "@sveltejs/kit";
 import { Elysia, t } from "elysia";
 
 // Buat instance Elysia dengan prefix '/api'
-const app = new Elysia({ prefix: "/api" })
+const app = new Elysia({ prefix: "/porto" })
   .use(swagger({
     path: "/docs",
   }))
