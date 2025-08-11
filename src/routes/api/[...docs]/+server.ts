@@ -1,11 +1,12 @@
-import swagger from "@elysiajs/swagger";
 import type { RequestHandler } from "@sveltejs/kit";
-import { Elysia, t } from "elysia";
+import { Elysia } from "elysia";
+import swagger from "@elysiajs/swagger";
 import { about } from "../../../data/about";
 import { skills } from "../../../data/skills";
 import { contact } from "../../../data/contact";
 
-// Buat instance Elysia dengan prefix '/api'
+
+// Instance Elysia
 const app = new Elysia({ prefix: "/api" })
   .use(
     swagger({
@@ -23,8 +24,22 @@ const app = new Elysia({ prefix: "/api" })
   .get("/skills", () => skills)
   .get("/contact", () => contact);
 
-export const fallback: RequestHandler = async ({ request }) => {
-  const clonedRequest = request.clone();
-  const response = await app.handle(clonedRequest);
-  return response;
+// GET
+export const GET: RequestHandler = async ({ request }) => {
+  return app.handle(request);
+};
+
+// POST
+export const POST: RequestHandler = async ({ request }) => {
+  return app.handle(request);
+};
+
+// PUT
+export const PUT: RequestHandler = async ({ request }) => {
+  return app.handle(request);
+};
+
+// DELETE
+export const DELETE: RequestHandler = async ({ request }) => {
+  return app.handle(request);
 };
