@@ -10,17 +10,21 @@ const app = new Elysia({ prefix: "/api" })
   .use(
     swagger({
       path: "/docs",
-      documentation:{
+      documentation: {
         info: {
           title: "Porto API SIAM AL SOBARI",
           description: "Yappingan siam al sobari yang sangat ganteng",
           version: "1.0.0",
-        }
-      }
+        },
+      },
     })
   )
   .get("/about", () => about)
   .get("/skills", () => skills)
   .get("/contact", () => contact);
 
-export const fallback: RequestHandler = ({ request }) => app.handle(request);
+export const fallback: RequestHandler = async ({ request }) => {
+  const clonedRequest = request.clone();
+  const response = await app.handle(clonedRequest);
+  return response;
+};
