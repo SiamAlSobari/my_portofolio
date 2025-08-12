@@ -5,7 +5,6 @@ import { about } from "../../../data/about";
 import { skills } from "../../../data/skills";
 import { contact } from "../../../data/contact";
 
-
 // Instance Elysia
 const app = new Elysia({ prefix: "/api" })
   .use(
@@ -24,22 +23,19 @@ const app = new Elysia({ prefix: "/api" })
   .get("/skills", () => skills)
   .get("/contact", () => contact);
 
+// Helper function to handle response
+async function handleResponse(request: Request): Promise<Response> {
+  const response = await app.handle(request);
+  // Read the body once and create a new Response
+  const body = await response.text();
+  return new Response(body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers: response.headers,
+  });
+}
+
 // GET
 export const GET: RequestHandler = async ({ request }) => {
-  return app.handle(request);
-};
-
-// POST
-export const POST: RequestHandler = async ({ request }) => {
-  return app.handle(request);
-};
-
-// PUT
-export const PUT: RequestHandler = async ({ request }) => {
-  return app.handle(request);
-};
-
-// DELETE
-export const DELETE: RequestHandler = async ({ request }) => {
-  return app.handle(request);
+  return handleResponse(request);
 };
