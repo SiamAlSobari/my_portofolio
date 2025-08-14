@@ -24,18 +24,15 @@ const app = new Elysia({ prefix: "/api" })
   .get("/contact", () => contact);
 
 // Helper function to handle response
-async function handleResponse(request: Request): Promise<Response> {
-  const response = await app.handle(request);
-  // Read the body once and create a new Response
-  const body = await response.text();
-  return new Response(body, {
-    status: response.status,
-    statusText: response.statusText,
-    headers: response.headers,
-  });
-}
-
-// GET
 export const GET: RequestHandler = async ({ request }) => {
-  return handleResponse(request);
+  // Clone isi body dari request supaya fresh
+  const body = request.body ? await request.text() : null;
+
+  const freshRequest = new Request(request.url, {
+    method: request.method,
+    headers: request.headers,
+    body: body,
+  });
+
+  return app.handle(freshRequest);
 };
