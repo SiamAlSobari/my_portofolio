@@ -24,7 +24,7 @@
     Hi, I&apos;m <span class="text-yellow-300">Siam Al Sobari</span>
   </h1>
   <p class="text-lg max-w-xl text-center mb-8 fade-in-up" style="animation-delay: 0.3s;">
-    A passionate fullstack developer focused on building beautiful and performant web apps.
+    A passionate Backend developer focused on building beautiful and performant web apps.
   </p>
 
   <nav class="flex gap-6 fade-in-up" style="animation-delay: 0.5s;">
@@ -32,11 +32,6 @@
       href="/api/docs"
       class="bg-yellow-400 hover:bg-yellow-300 text-purple-900 font-semibold py-3 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 active:scale-95"
       >Explore Me</a
-    >
-    <a
-      href="/api/docs"
-      class="border border-white hover:bg-white hover:text-purple-800 font-semibold py-3 px-6 rounded-lg transition-colors"
-      >See My Portofolio</a
     >
   </nav>
 
