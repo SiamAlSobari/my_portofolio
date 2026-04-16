@@ -1,21 +1,17 @@
 export const skills = {
   languages: [
-    { name: "HTML", level: "Advanced" },
-    { name: "CSS", level: "Advanced" },
-    { name: "JavaScript", level: "Intermediate" },
-    { name: "TypeScript", level: "Intermediate" },
+    { name: "TypeScript", level: "Advanced" },
+    { name: "Dart", level: "Advanced" },
   ],
   frameworks: [
-    { name: "React", level: "Intermediate" },
-    { name: "NextJs", level: "Intermediate" },
-    { name: "NestJS", level: "Beginner" },
-    { name: "SvelteKit", level: "Beginner" },
-    { name: "AdonisJS", level: "Beginner" },
+    { name: "Hono", level: "Intermediate" },
+    { name: "NestJS", level: "Intermediate" },
+    { name: "NextJS", level: "Advanced" },
+    { name: "Tanstack Start", level: "Intermediate" },
+    { name: "Flutter", level: "Advanced" },
   ],
   toolsAndUI: [
-    { name: "ShadCN UI", level: "Intermediate" },
-    { name: "Tailwind CSS", level: "Intermediate" },
-    { name: "Prisma", level: "Beginner" },
-    { name: "LucideOrm", level: "Beginner" },
+    { name: "Tailwind CSS", level: "Advanced" },
+    { name: "Prisma", level: "Intermediate" },
   ],
 };
